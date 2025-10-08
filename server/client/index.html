@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="A webAPP acting as a client to display video frames received from server, 
+  find location of ball, trasnmit location of the ball, and finally and display error in position reported by server">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WAutoVantage</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      background-color: rgb(60, 65, 71);
+    }
+    .video_container {
+      margin-top: 1rem;
+      width: 640px;
+      height: 480px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    #remote_video {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    
+    #status_display {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: rgb(253, 77, 77);
+    }
+
+    #connect_btn {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      color: rgba(10, 1, 1, 0.822);
+    }
+
+  </style>
+</head>
+<body>
+  <h1>3D AV Visualization</h1>
+  
+  <!-- Video display -->
+  <div class="video_container">
+      <video id="remote_video" autoplay playsinline></video>
+    </div>
+
+    <!-- hidden canvas for frame data -->
+    <canvas id="hidden_canvas" width="640" height="480" style="display: none;"></canvas>
+
+    <!-- Button to connect to server-->
+    <button id="connect_btn">Connect to Server</button>
+    
+    <!-- Status display -->
+    <div id="status_display"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
