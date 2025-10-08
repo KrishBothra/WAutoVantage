@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bb-app
+  template:
+    metadata:
+      labels:
+        app: bb-app
+    spec:
+      hostNetwork: true
+      containers:
+      - name: bounce-cast-server
+        image: bounce-cast-server:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 4433
+          protocol: UDP

@@ -1,0 +1,2 @@
+assets/bike/bike.obj filter=lfs diff=lfs merge=lfs -text
+assets/truck/truck.obj filter=lfs diff=lfs merge=lfs -text
